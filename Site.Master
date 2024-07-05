@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="HW5.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.2.3/dist/lux/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <%--<link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />--%>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary " style="padding-left: 50px">
+            <a class="navbar-brand" href="#">
+                <asp:Label ID="NameLbl" CssClass="navbar-brand" runat="server" Text="HELLO"></asp:Label>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <%--<a class="nav-link active" meta:resourcekey="HomepageLblResx" href="~/Default.aspx">Home Page</a>--%>
+                        <asp:HyperLink ID="HomepageHypl" CssClass="nav-link active" NavigateUrl="~/Default.aspx" meta:resourcekey="HomepageHyplResx" runat="server">Home Page</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <%--<a class="nav-link" href="Students.aspx">Students</a>--%>
+                        <asp:HyperLink ID="StudentHypl" CssClass="nav-link active" NavigateUrl="~/Students.aspx" meta:resourcekey="StudentHyplResx" runat="server">Students</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <%--<a class="nav-link" href="Courses.aspx">Courses</a>--%>
+                        <asp:HyperLink ID="CoursesHypl" CssClass="nav-link active" NavigateUrl="~/Courses.aspx" meta:resourcekey="CoursesHyplResx" runat="server">Courses</asp:HyperLink>
+                    </li>
+                    <li class="nav-item">
+                        <%--<a class="nav-link" href="About.aspx">About</a>--%>
+                        <asp:HyperLink ID="AboutHypl" CssClass="nav-link active" NavigateUrl="~/About.aspx" meta:resourcekey="AboutHyplResx" runat="server">About</asp:HyperLink>
+                    </li>
+
+                </ul>
+                
+                <div class="d-flex">
+                    <asp:LinkButton ID="lnkChangeLanguage" CssClass="btn btn-secondary my-2 my-sm-0" runat="server" meta:resourcekey="lnkChangeLanguageResource1" OnClick="lnkChangeLanguage_Click">English</asp:LinkButton>
+                </div>
+            </div>
+        </nav>
+        <div style="background-image: url(images/image2.jpg); background-size: cover">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                <%--<asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>--%>
+            </asp:ContentPlaceHolder>
+        </div>
+        <div>
+            &nbsp;Copyright (c) BIM308 Course Students
+        </div>
+    </form>
+</body>
+</html>
